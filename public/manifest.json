@@ -1,0 +1,11 @@
+{
+  "name": "macsapp — Student Planner",
+  "short_name": "macsapp",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#6366f1",
+  "background_color": "#f8fafc",
+  "description": "A smart subject tracker for students"
+}
