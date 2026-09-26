@@ -1,164 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#f4b400" />
-    <title>SubTrack</title>
-    <link rel="stylesheet" href="/styles.css" />
-  </head>
-  <body>
-    <div class="phone-frame">
-      <div class="phone-shell">
-        <div class="statusbar">
-          <div class="status-left"></div>
-          <div class="status-center"></div>
-          <div class="status-right"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#fbbf24" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="macsapp" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23fbbf24'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='62' font-family='Arial' font-weight='bold' fill='white'%3EM%3C/text%3E%3C/svg%3E" />
+  <title>macsapp — Student Planner</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Auth Screen -->
+    <section id="authScreen" class="auth-screen">
+      <div class="auth-card">
+        <div class="auth-header">
+          <div class="logo-circle">M</div>
+          <h1>macsapp</h1>
+          <p class="tagline">Your Smart Subject Tracker</p>
         </div>
 
-        <div class="screen">
-          <header class="mobile-header">
-            <div class="bell-wrap">
-              <div class="bell-icon"><span>◔</span></div>
-            </div>
-            <div class="points-pill">
-              <span class="star">★</span>
-              <span>425 pts</span>
-            </div>
-          </header>
+        <form id="loginForm" class="auth-form">
+          <h2>Login</h2>
+          <input type="email" id="loginEmail" placeholder="Email" required />
+          <input type="password" id="loginPassword" placeholder="Password" required />
+          <button type="submit" class="btn-primary">Login</button>
+          <p class="switch-auth">Don't have an account? <a href="#" onclick="switchToRegister(event)">Sign up</a></p>
+        </form>
 
-          <main class="dashboard-main">
-            <div class="title-banner">
-              <div class="title-copy">
-                <span class="title-name">SubTrack:</span>
-                <span class="title-sub">Subject Requirements Tracker App</span>
-              </div>
-              <p class="title-desc">
-                SubTrack's mission is to help students manage deadlines by organizing their school requirements.
-              </p>
-            </div>
-
-            <section class="panel-block">
-              <h3>Features</h3>
-              <div class="feature-grid">
-                <div class="feature-card feature-tile">
-                  <div class="feature-icon green">
-                    <span>◔</span>
-                  </div>
-                  <div class="feature-body">
-                    <strong>Requirement</strong>
-                    <span>Health Meter</span>
-                    <small>On track</small>
-                  </div>
-                </div>
-
-                <div class="feature-card feature-tile">
-                  <div class="feature-icon yellow">
-                    <span>◎</span>
-                  </div>
-                  <div class="feature-body">
-                    <strong>Focus Mode</strong>
-                    <span>Minimize distraction</span>
-                    <small>Start focus</small>
-                  </div>
-                </div>
-
-                <div class="feature-card feature-tile">
-                  <div class="feature-icon purple">
-                    <span>✦</span>
-                  </div>
-                  <div class="feature-body">
-                    <strong>Gamification</strong>
-                    <span>Earn points to unlock rewards</span>
-                    <small>View rewards</small>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <section class="panel-block organizers">
-              <h3>Organizers</h3>
-              <div class="feature-grid two-up">
-                <div class="feature-card organizer-card">
-                  <div class="feature-icon blue">
-                    <span>☑</span>
-                  </div>
-                  <div class="feature-body">
-                    <strong>Smart Schedule</strong>
-                    <span>Conflict detection</span>
-                    <small>No conflicts!</small>
-                  </div>
-                </div>
-
-                <div class="feature-card organizer-card">
-                  <div class="feature-icon orange">
-                    <span>★</span>
-                  </div>
-                  <div class="feature-body">
-                    <strong>Priority Score</strong>
-                    <span>We calculate which tasks should be done first.</span>
-                    <small>Priority: Math Quiz</small>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <section class="panel-block tracker-block">
-              <h3>Tracker</h3>
-              <div class="tracker-grid">
-                <div class="tracker-card">
-                  <div class="mini-donut donut-red">
-                    <span>67%</span>
-                  </div>
-                  <div class="tracker-copy">
-                    <strong>Math</strong>
-                    <small>Homework</small>
-                  </div>
-                </div>
-
-                <div class="tracker-card">
-                  <div class="mini-donut donut-blue">
-                    <span>58%</span>
-                  </div>
-                  <div class="tracker-copy">
-                    <strong>English</strong>
-                    <small>Essay</small>
-                  </div>
-                </div>
-
-                <div class="tracker-card">
-                  <div class="mini-donut donut-green">
-                    <span>75%</span>
-                  </div>
-                  <div class="tracker-copy">
-                    <strong>Science</strong>
-                    <small>Project</small>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </main>
-
-          <nav class="bottom-nav">
-            <button class="nav-item active" type="button">
-              <span class="nav-icon">⌂</span>
-              <span>Home</span>
-            </button>
-            <button class="nav-item" type="button">
-              <span class="nav-icon">▣</span>
-              <span>Tasks</span>
-            </button>
-            <button class="nav-item" type="button">
-              <span class="nav-icon">◫</span>
-              <span>Calendar</span>
-            </button>
-            <button class="nav-item" type="button">
-              <span class="nav-icon">◍</span>
-              <span>Profile</span>
-            </button>
-          </nav>
-        </div>
+        <form id="registerForm" class="auth-form hidden">
+          <h2>Create Account</h2>
+          <input type="text" id="registerName" placeholder="Full Name" required />
+          <input type="email" id="registerEmail" placeholder="Email" required />
+          <input type="password" id="registerPassword" placeholder="Password" required />
+          <button type="submit" class="btn-primary">Sign up</button>
+          <p class="switch-auth">Already have an account? <a href="#" onclick="switchToLogin(event)">Login</a></p>
+        </form>
       </div>
-    </div>
-  </body>
+    </section>
+
+    <!-- Dashboard Screen -->
+    <section id="dashboardScreen" class="dashboard hidden">
+      <header class="dashboard-header">
+        <div class="header-top">
+          <h1>macsapp</h1>
+          <button id="logoutBtn" class="btn-logout">Logout</button>
+        </div>
+        <p class="user-welcome" id="userWelcome"></p>
+      </header>
+
+      <main class="dashboard-main">
+        <!-- Stats Cards -->
+        <div class="stats-container">
+          <div class="stat-card">
+            <div class="stat-label">Total Tasks</div>
+            <div class="stat-value" id="totalTasks">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Completed</div>
+            <div class="stat-value" id="completedTasks">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Progress</div>
+            <div class="stat-value" id="overallProgress">0%</div>
+          </div>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="subjects">📚 Subjects</button>
+          <button class="tab-btn" data-tab="tasks">📝 Tasks</button>
+          <button class="tab-btn" data-tab="calendar">📅 Calendar</button>
+          <button class="tab-btn" data-tab="notifications">🔔 Alerts</button>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="tab-content">
+          <!-- Subjects Tab -->
+          <div id="subjects-tab" class="tab-pane active">
+            <div class="section-title">Your Subjects</div>
+            <form id="subjectForm" class="form-group">
+              <input type="text" id="subjectName" placeholder="Subject name" required />
+              <textarea id="subjectDescription" placeholder="Description (optional)" rows="2"></textarea>
+              <div class="color-picker-group">
+                <label>Color:</label>
+                <input type="color" id="subjectColor" value="#fbbf24" />
+              </div>
+              <button type="submit" class="btn-primary">+ Add Subject</button>
+            </form>
+            <div id="subjectList" class="list-container"></div>
+          </div>
+
+          <!-- Tasks Tab -->
+          <div id="tasks-tab" class="tab-pane hidden">
+            <div class="section-title">Your Tasks</div>
+            <form id="taskForm" class="form-group">
+              <select id="taskSubject" required>
+                <option value="">Select a subject...</option>
+              </select>
+              <input type="text" id="taskTitle" placeholder="Task title" required />
+              <select id="taskType">
+                <option value="assignment">📋 Assignment</option>
+                <option value="quiz">📚 Quiz</option>
+                <option value="exam">📖 Exam</option>
+                <option value="note">📌 Note</option>
+              </select>
+              <input type="date" id="taskDeadline" />
+              <textarea id="taskNotes" placeholder="Notes (optional)" rows="2"></textarea>
+              <button type="submit" class="btn-primary">+ Add Task</button>
+            </form>
+            <div id="taskList" class="list-container"></div>
+          </div>
+
+          <!-- Calendar Tab -->
+          <div id="calendar-tab" class="tab-pane hidden">
+            <div class="section-title">Upcoming Deadlines (Next 7 Days)</div>
+            <div id="calendarView" class="calendar-container"></div>
+          </div>
+
+          <!-- Notifications Tab -->
+          <div id="notifications-tab" class="tab-pane hidden">
+            <div class="section-title">Smart Alerts</div>
+            <div id="notificationList" class="list-container"></div>
+          </div>
+        </div>
+      </main>
+    </section>
+  </div>
+
+  <script src="/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js').catch(err => {
+        console.log('Service Worker registration failed:', err);
+      });
+    }
+
+    function switchToRegister(e) {
+      e.preventDefault();
+      document.getElementById('loginForm').classList.add('hidden');
+      document.getElementById('registerForm').classList.remove('hidden');
+    }
+
+    function switchToLogin(e) {
+      e.preventDefault();
+      document.getElementById('registerForm').classList.add('hidden');
+      document.getElementById('loginForm').classList.remove('hidden');
+    }
+
+    // Tab switching
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tabName = btn.dataset.tab;
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-pane').forEach(p => p.classList.add('hidden'));
+        btn.classList.add('active');
+        document.getElementById(tabName + '-tab').classList.remove('hidden');
+      });
+    });
+  </script>
+</body>
 </html>
