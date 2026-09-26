@@ -1,28 +1,21 @@
 {
   "name": "macsapp",
   "version": "1.0.0",
-  "description": "A subject tracker app for students",
+  "description": "Student subject tracker and reminder app",
   "main": "server/index.js",
   "scripts": {
     "start": "node server/index.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "nodemon server/index.js",
-    "client": "cd client && npm start",
-    "build": "cd client && npm run build"
+    "dev": "nodemon server/index.js"
   },
   "dependencies": {
-    "express": "^4.18.2",
-    "mongoose": "^7.0.0",
     "bcryptjs": "^2.4.3",
-    "jsonwebtoken": "^9.0.0",
-    "dotenv": "^16.0.3",
-    "node-cron": "^3.0.2",
-    "axios": "^1.3.0",
     "cors": "^2.8.5",
-    "express-validator": "^7.0.0"
+    "dotenv": "^16.0.3",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "node-cron": "^3.0.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20",
-    "concurrently": "^7.6.0"
+    "nodemon": "^3.1.9"
   }
 }
